@@ -1,12 +1,6 @@
 /* Importação das fontes */
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap');
 
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 /* Fontes */
 body {
@@ -45,6 +39,7 @@ header {
     background: #015F97;
     z-index: 1000;
 }
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -282,6 +277,7 @@ header {
 #parceiros .card img:hover {
     transform: scale(1.05);
 }
+
 .modal-content {
     border-radius: 10px;
 }
