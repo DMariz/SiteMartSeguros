@@ -1,0 +1,426 @@
+/* Importação das fontes */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fontes */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 9999;
+}
+.spinner {
+    width: 40px;
+    height: 40px;
+    margin: 100px auto;
+    background-color: #015F97;
+    border-radius: 100%;
+    animation: spin 1s infinite ease-in-out;
+}
+@keyframes spin {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); opacity: 0; }
+}
+
+/* Header e Navbar */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: #015F97;
+    z-index: 1000;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+}
+.logo a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+.nav-links li {
+    margin-left: 30px;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+.nav-links a:hover {
+    color: #5DB3D4;
+}
+/* Mobile Menu */
+.mobile-menu-icon {
+    display: none;
+    cursor: pointer;
+}
+.mobile-menu-icon .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: #333;
+}
+
+/* Seção Home */
+#home {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.carousel {
+    width: 100%;
+    height: 100%;
+}
+.carousel-item {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.carousel-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+.carousel-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.carousel-content .btn {
+    margin-top: auto;
+    background: #015F97;
+    color: #fff;
+    padding: 20px 40px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+.carousel-content .btn:hover {
+    background: #5DB3D4;
+}
+
+/* Seção Produtos */
+#produtos {
+    padding: 80px 50px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+#produtos h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+.produtos-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative; 
+    height: 400px;
+}
+.produto-card {
+    width: 300px; /* Ajustado para melhor responsividade */
+    margin: 20px;
+    perspective: 1000px;
+    cursor: pointer;
+    position: relative; /* Necessário para o efeito flip */
+}
+.produto-card .card-front, .produto-card .card-back {
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.produto-card .card-front {
+    background: #fff;
+    border: 1px solid #ccc; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.produto-card .card-front img {
+    width: 100%;
+    height: auto;
+}
+.produto-card .card-front h3 {
+    font-size: 24px;
+    margin: 20px 0;
+    text-align: center;
+}
+.produto-card .card-back {
+    background: #5DB3D4;
+    color: #fff;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.produto-card:hover .card-front {
+    transform: rotateY(180deg);
+}
+.produto-card:hover .card-back {
+    transform: rotateY(360deg);
+}
+
+/* Seção Orçamento */
+#orcamento {
+    padding: 80px 20px; /* Ajustado para melhor responsividade */
+    text-align: center;
+    background: #fff;
+}
+#orcamento h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+#orcamento-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+#orcamento-form input, #orcamento-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#orcamento-form .btn {
+    background: #5DB3D4;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+#orcamento-form .btn:hover {
+    background: #015F97;
+}
+.form-mensagem {
+    margin-top: 20px;
+    font-size: 18px;
+    color: green;
+}
+
+/* Seção Sobre */
+#sobre {
+    padding: 80px 50px;
+    text-align: center;
+    background: #f9f9f9;
+}
+#sobre h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+#sobre p {
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+#sobre h3 {
+    font-size: 24px;
+    color: #015F97;
+    transition: transform 0.3s;
+}
+#sobre h3:hover {
+    transform: scale(1.1);
+}
+
+/* Seção Parceiros e Seguradoras */
+#parceiros {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #fff;
+}
+#parceiros h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+#parceiros .card {
+    border: none;
+    background: none;
+}
+#parceiros .card img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+}
+#parceiros .card img:hover {
+    transform: scale(1.05);
+}
+.modal-content {
+    border-radius: 10px;
+}
+.modal-header, .modal-footer {
+    border: none;
+}
+.modal-title {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Seção Contato */
+#contato {
+    padding: 80px 50px;
+    text-align: center;
+    background: #f9f9f9;
+}
+#contato h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+.contato-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#contato-form {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    margin: 20px;
+}
+#contato-form input, #contato-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#contato-form .btn {
+    background: #5DB3D4;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+#contato-form .btn:hover {
+    background: #015F97;
+}
+.contato-info {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    margin: 20px;
+    text-align: left;
+}
+.contato-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.contato-info p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.social-icons {
+    display: flex;
+}
+.social-icons a {
+    color: #333;
+    font-size: 24px;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+.social-icons a:hover {
+    color: #5DB3D4;
+}
+
+/* Footer */
+footer {
+    background: #015F97;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+    }
+    .nav-links li {
+        margin: 20px 0;
+    }
+    .mobile-menu-icon {
+        display: block;
+    }
+    .navbar {
+        padding: 15px 20px;
+    }
+    .carousel-content h1 {
+        font-size: 32px;
+    }
+    .carousel-content .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    .produtos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .produto-card {
+        width: 100%;
+    }
+    #orcamento {
+        padding: 60px 20px;
+    }
+    .contato-container {
+        flex-direction: column;
+    }
+    #parceiros .col-md-4 {
+        margin-bottom: 30px;
+    }
+}
+
+/* Mouseover Interativo nos Botões */
+.btn:hover {
+    background: #5DB3D4;
+    box-shadow: 0 0 10px #5DB3D4;
+}
+
+/* Efeito Glow nos Ícones */
+.social-icons a:hover {
+    text-shadow: 0 0 10px #015F97;
+}
