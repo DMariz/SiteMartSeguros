@@ -3,26 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap');
 
 
-
-/* Preloader */
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #fff;
-    z-index: 9999;
+:root {
+    --primary-color: #015F97; /* Azul principal */
+    --hover-color: #5DB3D4;   /* Azul hover */
+    --highlight-color: #CFC043; /* Amarelo para destaque */
+    --text-color: #333;
+    --background-color: #fff;
 }
-.spinner {
-    width: 40px;
-    height: 40px;
-    margin: 100px auto;
-    background-color: #015F97;
-    border-radius: 100%;
-    animation: spin 1s infinite ease-in-out;
-}
-
 /* Fontes */
 body {
     font-family: 'Roboto', sans-serif;
@@ -31,13 +18,26 @@ body {
     background-color: var(--background-color);
     scroll-behavior: smooth;
 }
-:root {
-    --primary-color: #015F97; /* Azul principal */
-    --hover-color: #5DB3D4;   /* Azul hover */
-    --highlight-color: #CFC043; /* Amarelo para destaque */
-    --text-color: #333;
-    --background-color: #fff;
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: --background-color;
+    z-index: 9999;
 }
+.spinner {
+    width: 40px;
+    height: 40px;
+    margin: 100px auto;
+    background-color: var(--primary-color);
+    border-radius: 100%;
+    animation: spin 1s infinite ease-in-out;
+}
+
 
 @keyframes spin {
     0% { transform: scale(0); }
@@ -49,7 +49,7 @@ header {
     width: 100%;
     position: fixed;
     top: 0;
-    background: #015F97;
+    background: var(--primary-color);
     z-index: 1000;
 }
 
@@ -62,7 +62,7 @@ header {
 .logo a {
     font-family: 'Poppins', sans-serif;
     font-size: 24px;
-    color: #fff;
+    color: var(--background-color);
     text-decoration: none;
     font-weight: 700;
 }
@@ -75,13 +75,28 @@ header {
 }
 .nav-links a {
     text-decoration: none;
-    color: #fff;
-    font-weight: 500;
+    color: var(--background-color);
+    font-weight: 600;
     transition: color 0.3s;
+    padding: 8px;
+    border-radius: 4px;
 }
 .nav-links a:hover {
-    color: #5DB3D4;
+    background-color: var(--highlight-color);
 }
+
+.contact-button a {
+    background-color: var(--highlight-color);
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.contact-button a:hover {
+    background-color: darken(var(--highlight-color), 10%);
+}
+
 /* Mobile Menu */
 .mobile-menu-icon {
     display: none;
@@ -117,7 +132,7 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #fff;
+    color: --background-color;
     text-align: center;
 }
 .carousel-content h1 {
@@ -127,8 +142,8 @@ header {
 }
 .carousel-content .btn {
     margin-top: auto;
-    background: #015F97;
-    color: #fff;
+    background: var(--primary-color);
+    color: --background-color;
     padding: 20px 40px;
     text-decoration: none;
     font-size: 18px;
@@ -136,7 +151,7 @@ header {
     transition: background 0.3s;
 }
 .carousel-content .btn:hover {
-    background: #5DB3D4;
+    background: --hover-color;
 }
 
 /* Seção Produtos */
@@ -174,7 +189,7 @@ header {
     overflow: hidden;
 }
 .produto-card .card-front {
-    background: #fff;
+    background: --background-color;
     border: 1px solid #ccc; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -188,8 +203,8 @@ header {
     text-align: center;
 }
 .produto-card .card-back {
-    background: #5DB3D4;
-    color: #fff;
+    background: --hover-color;
+    color: --background-color;
     transform: rotateY(180deg);
     display: flex;
     align-items: center;
@@ -207,7 +222,7 @@ header {
 #orcamento {
     padding: 80px 20px; /* Ajustado para melhor responsividade */
     text-align: center;
-    background: #fff;
+    background: --background-color;
 }
 #orcamento h2 {
     font-family: 'Poppins', sans-serif;
@@ -226,8 +241,8 @@ header {
     border-radius: 5px;
 }
 #orcamento-form .btn {
-    background: #5DB3D4;
-    color: #fff;
+    background: --hover-color;
+    color: --background-color;
     padding: 15px 30px;
     border: none;
     font-size: 18px;
@@ -235,7 +250,7 @@ header {
     transition: background 0.3s;
 }
 #orcamento-form .btn:hover {
-    background: #015F97;
+    background: var(--primary-color);
 }
 .form-mensagem {
     margin-top: 20px;
@@ -260,7 +275,7 @@ header {
 }
 #sobre h3 {
     font-size: 24px;
-    color: #015F97;
+    color: var(--primary-color);
     transition: transform 0.3s;
 }
 #sobre h3:hover {
@@ -271,7 +286,7 @@ header {
 #parceiros {
     padding: 80px 0;
     text-align: center;
-    background-color: #fff;
+    background-color: --background-color;
 }
 #parceiros h2 {
     font-family: 'Poppins', sans-serif;
@@ -331,8 +346,8 @@ header {
     border-radius: 5px;
 }
 #contato-form .btn {
-    background: #5DB3D4;
-    color: #fff;
+    background: --hover-color;
+    color: --background-color;
     padding: 15px 30px;
     border: none;
     font-size: 18px;
@@ -340,7 +355,7 @@ header {
     transition: background 0.3s;
 }
 #contato-form .btn:hover {
-    background: #015F97;
+    background: var(--primary-color);
 }
 .contato-info {
     flex: 1;
@@ -367,13 +382,13 @@ header {
     transition: color 0.3s;
 }
 .social-icons a:hover {
-    color: #5DB3D4;
+    color: --hover-color;
 }
 
 /* Footer */
 footer {
-    background: #015F97;
-    color: #fff;
+    background: var(--primary-color);
+    color: --background-color;
     text-align: center;
     padding: 20px 0;
 }
@@ -383,7 +398,7 @@ footer {
     .nav-links {
         display: none;
         flex-direction: column;
-        background: #fff;
+        background: --background-color;
         position: absolute;
         top: 70px;
         right: 0;
@@ -425,11 +440,11 @@ footer {
 
 /* Mouseover Interativo nos Botões */
 .btn:hover {
-    background: #5DB3D4;
-    box-shadow: 0 0 10px #5DB3D4;
+    background: --hover-color;
+    box-shadow: 0 0 10px --hover-color;
 }
 
 /* Efeito Glow nos Ícones */
 .social-icons a:hover {
-    text-shadow: 0 0 10px #015F97;
+    text-shadow: 0 0 10px var(--primary-color);
 }
