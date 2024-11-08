@@ -37,7 +37,10 @@
         <nav class="navbar">
             <div class="logo">
                 <a href="#">Mart Seguros</a>
+                <a href="https://api.whatsapp.com/send?phone=5581993914440"><i class="fab fa-whatsapp"></i></a>
+                
             </div>
+            
             <ul class="nav-links">
                 <li>
                     <a href="#home">
@@ -53,24 +56,25 @@
                     <a href="#orcamento">
                         Solicite Orçamento
                     </a>
+                    
                 </li>
                 <li class>
                     <a href="#sobre"  data-toggle="scroll">
                         Quem Somos Nós
                     </a>
+                   
                 </li>
                 <li class>
                     <a href="#parceiros" data-toggle="scroll">
                        Parceiros e Seguradoras
                     </a>
+                   
                 </li>
                 
                 <li class>
                     <a href="#contato">Contato</a>
                 </li>
-                <li class>
-                    <a href="https://api.whatsapp.com/send?phone=5581993914440"><i class="fa-regular fa-whatsapp"></i>(81) 99391-4440</a>
-                </li>
+
             </ul>
             <div class="mobile-menu-icon">
                 <span class="bar"></span>
@@ -83,23 +87,23 @@
     <!-- Seção Home -->
     <section id="home" >
         <div class="carousel">
-            <div class="carousel-item" style="background-image: url('images/dice.png');">
+            <div class="carousel-item">
                 <div class="carousel-content">
-                    <h1>Proteção para você e <strong>sua</strong> família</h1>
-                    <a href="#orcamento" class="btn">Solicitar Orçamento</a>
+                    <h1>Os Melhores <em>Serviços</em></h1>
+                    <a href="#contato" class="btn">Fale Conosco</a>
+                    <li><a href="https://api.whatsapp.com/send?phone=5581993914440"><i class="fab fa-whatsapp"></i>(81) 99391-4440</a></li>
                 </div>
             </div>
-            <div class="carousel-item" style="background-image: url('images/produto2.png');">
+            <div class="carousel-item">
                 <div class="carousel-content">
                     <h1>Planos Personalizados</h1>
                     <a href="#produtos" class="btn">Conheça Nossos Produtos</a>
                 </div>
             </div>
-            <div class="carousel-item" style="background-image: url('images/facebook.png');">
+            <div class="carousel-item">
                 <div class="carousel-content">
-                    <h1>Os Melhores <em>Serviços</em></h1>
-                    <a href="#contato" class="btn">Fale Conosco</a>
-                    <li><a href="https://api.whatsapp.com/send?phone=5581993914440"><i class="fa fa-phone"></i>(81) 99391-4440</a></li>
+                    <h1>Proteção para você e <strong>sua</strong> família</h1>
+                    <a href="#orcamento" class="btn">Solicitar Orçamento</a>
                 </div>
             </div>
         </div>
@@ -107,7 +111,7 @@
 
     <!-- Seção Conheça Nossos Produtos -->
     <section id="produtos">
-        <h2 data-aos="fade-up">Conheça Nossos Produtos</h2>
+        <h2 class= "section-title" data-aos="fade-up">Conheça Nossos Produtos</h2>
         <div class="produtos-container clearfix">
             <div class="produto-card" data-aos="zoom-in">
                 <div class="card-front">
@@ -141,7 +145,7 @@
 
     <!-- Seção Solicite Orçamento -->
     <section id="orcamento">
-        <h2 data-aos="fade-up">Solicite Orçamento</h2>
+        <h2 class= "section-title" data-aos="fade-up">Solicite Orçamento</h2>
         <form id="orcamento-form" data-aos="fade-up" data-aos-delay="100">
             <input type="text" name="nome" placeholder="Seu Nome" required>
             <input type="email" name="email" placeholder="Seu E-mail" required>
@@ -154,15 +158,17 @@
 
     <!-- Seção Quem Somos Nós -->
     <section id="sobre">
-        <h2 data-aos="fade-up">Quem Somos Nós</h2>
-        <p data-aos="fade-up" data-aos-delay="100">A Mart Seguros é uma corretora comprometida em oferecer as melhores soluções em seguros para você e sua família.</p>
+        <h2 class= "section-title" data-aos="fade-up">Quem Somos Nós</h2>
+        <p data-aos="fade-up" data-aos-delay="100">A <strong>Mart Seguros</strong> é uma corretora comprometida em oferecer as melhores soluções em seguros para você e sua família.</p>
         <h3 data-aos="fade-up" data-aos-delay="200">"Buscamos a excelência"</h3>
+        <p data-aos="fade-up" data-aos-delay="100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.</p>
+
     </section>
 
     <!-- Seção Parceiros e Seguradoras -->
     <section id="parceiros" class="py-5">
         <div class="container">
-            <h2 data-aos="fade-up" class="mb-5">Parceiros e Seguradoras</h2>
+            <h2  class="mb-5c section-title" data-aos="fade-up" >Parceiros e Seguradoras</h2>
             <div class="row" data-aos="fade-up" data-aos-delay="100">
                 <!-- Parceiro Allianz -->
                 <div class="col-md-4 col-sm-6 mb-4">
@@ -399,7 +405,7 @@
 
     <!-- Seção Contato -->
     <section id="contato">
-        <h2 data-aos="fade-up">Contato</h2>
+    <h2 class= "section-title" data-aos="fade-up" >Contato</h2>
         <div class="contato-container" data-aos="fade-up" data-aos-delay="100">
             <form id="contato-form">
                 <input type="text" name="nome" placeholder="Seu Nome" required>
@@ -408,22 +414,29 @@
                 <button type="submit" class="btn">Enviar</button>
             </form>
             <div class="contato-info">
-                <h3>Nosso Endereço</h3>
-                <p>Rua Exemplo, 123 - Centro<br>Cidade - Estado</p>
                 <h3>Telefone</h3>
-                <p>(81) 1234-5678</p>
+                <p>(81) 99391444</p>
                 <h3>Redes Sociais</h3>
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=5581993914440"><i class="fab fa-whatsapp"></i></a>
                 </div>
+            </div>
+            <div>
+                <h5 class = "subtitle">Nosso Endereço</h5>
+                <p>Rua Exemplo, 123 - Centro<br>Cidade - Estado</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2023 Mart Seguros. Todos os direitos reservados.</p>
+
+        <div>
+            <p>&copy; 2023 Mart Seguros. Todos os direitos reservados.</p>
+        </div>
+        
     </footer>
 
     <!-- Scripts JavaScript -->
