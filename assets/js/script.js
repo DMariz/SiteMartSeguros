@@ -6,10 +6,10 @@ window.addEventListener('load', function() {
 
 // Menu Mobile
 const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
-const navLinks = document.querySelector('.nav-links');
+const navLinksContainer = document.querySelector('.nav-links');
 
 mobileMenuIcon.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+    navLinksContainer.classList.toggle('active');
 });
 
 // Slick Carousel para o Banner Principal
@@ -22,10 +22,8 @@ $(document).ready(function(){
         fade: true,
         cssEase: 'linear'
     });
-});
 
-// Slick Carousel para Parceiros
-$(document).ready(function(){
+    // Slick Carousel para Parceiros
     $('.parceiros-carousel').slick({
         slidesToShow: 4,
         slidesToScroll: 1,
@@ -72,3 +70,26 @@ contatoForm.addEventListener('submit', function(e) {
     alert('Obrigado! Sua mensagem foi enviada com sucesso.');
     contatoForm.reset();
 });
+
+// Atualização dos links do navbar conforme o scroll
+const navLinks = document.querySelectorAll('.nav-links a');
+
+function updateNavLinks() {
+    const fromTop = window.scrollY;
+
+    navLinks.forEach(link => {
+        const section = document.querySelector(link.hash);
+
+        if (
+            section.offsetTop <= fromTop + 100 &&
+            section.offsetTop + section.offsetHeight > fromTop + 100
+        ) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', updateNavLinks);
+updateNavLinks();
