@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Mart Seguros</title>
+    <meta name="author" content="DMariz">
     <!-- Meta Tags Responsivas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    
+    <!--  Files CSS -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
     <!-- Fonte do Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap" rel="stylesheet">
+
     <!-- Slick Carousel CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/slick.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css"/>
     <!-- AOS CSS (Animate on Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Seu CSS personalizado -->
-    <link rel="stylesheet" href="assets/css/style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Font Awesome Icons -->
@@ -33,12 +38,38 @@
                 <a href="#">Mart Seguros</a>
             </div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#produtos">Conheça Nossos Produtos</a></li>
-                <li><a href="#orcamento">Solicite Orçamento</a></li>
-                <li><a href="#sobre">Quem Somos Nós</a></li>
-                <li><a href="#parceiros">Parceiros e Seguradoras</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li>
+                    <a href="#home">
+                        Início da Página
+                    </a>
+                </li>
+                <li class>
+                    <a href="#produtos">
+                        Conheça Nossos Produtos
+                    </a>
+                </li>
+                <li class>
+                    <a href="#orcamento">
+                        Solicite Orçamento
+                    </a>
+                </li>
+                <li class>
+                    <a href="#sobre"  data-toggle="scroll">
+                        Quem Somos Nós
+                    </a>
+                </li>
+                <li class>
+                    <a href="#parceiros" data-toggle="scroll">
+                       Parceiros e Seguradoras
+                    </a>
+                </li>
+                
+                <li class>
+                    <a href="#contato">Contato</a>
+                </li>
+                <li class>
+                    <a href="https://api.whatsapp.com/send?phone=5581993914440"><i class="fa fa-whatsapp"></i>(81) 99391-4440</a>
+                </li>
             </ul>
             <div class="mobile-menu-icon">
                 <span class="bar"></span>
@@ -51,22 +82,23 @@
     <!-- Seção Home -->
     <section id="home" >
         <div class="carousel">
-            <div class="carousel-item" style="background-image: url('images/banner1.jpg');">
+            <div class="carousel-item" style="background-image: url('images/dice.png');">
                 <div class="carousel-content">
                     <h1>Proteção para você e <strong>sua</strong> família</h1>
                     <a href="#orcamento" class="btn">Solicitar Orçamento</a>
                 </div>
             </div>
-            <div class="carousel-item" style="background-image: url('images/banner2.jpg');">
+            <div class="carousel-item" style="background-image: url('images/produto2.png');">
                 <div class="carousel-content">
                     <h1>Planos Personalizados</h1>
                     <a href="#produtos" class="btn">Conheça Nossos Produtos</a>
                 </div>
             </div>
-            <div class="carousel-item" style="background-image: url('images/banner2.jpg');">
+            <div class="carousel-item" style="background-image: url('images/facebook.png');">
                 <div class="carousel-content">
                     <h1>Os Melhores <em>Serviços</em></h1>
                     <a href="#contato" class="btn">Fale Conosco</a>
+                    <li><a href="https://api.whatsapp.com/send?phone=5581993914440"><i class="fa fa-phone"></i>(81) 99391-4440</a></li>
                 </div>
             </div>
         </div>
