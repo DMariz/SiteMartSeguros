@@ -14,7 +14,7 @@ mobileMenuIcon.addEventListener('click', () => {
 
 // Slick Carousel para o Banner Principal
 $(document).ready(function(){
-    $('.carousel').slick({
+    $('.slick-carousel').slick({
         autoplay: true,
         autoplaySpeed: 5000,
         arrows: false,
