@@ -14,7 +14,7 @@
 
 /* Fontes e Diretrizes */
 body {
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Titillium Web', 'Poppins', sans-serif;
     color: var(--text-color);
     background-color: var(--background-color);
     scroll-behavior: smooth;
@@ -75,14 +75,17 @@ header {
 
 .navbar {
     display: flex;
+    font-family: 'Titillium Web', 'Poppins', sans-serif;
+    font-size: 17px;
+    text-rendering: optimizelegibility;
     justify-content: space-between;
     align-items: center;
-    padding: 0.9375rem 3.125rem; /* 15px 50px */
+    padding: 3rem 2rem;
 }
 .logo a {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem; /* 24px */
-    color: var(--background-color);
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 2rem;
+    color: #fff;
     text-decoration: none;
     font-weight: 1000;
 }
@@ -95,7 +98,7 @@ header {
     display: flex;
 }
 .nav-links li {
-    margin-left: 1.875rem; /* 30px */
+    margin-left: 2rem; 
     display: block;
 }
 
@@ -104,11 +107,12 @@ header {
     color: var(--background-color);
     font-weight: 600;
     transition: color 0.3s;
-    padding: 1.5625rem 1.25rem 2.1875rem 1.25rem; /* 25px 20px 35px 20px */
-    border-radius: 0.25rem; /* 4px */
+    padding: 2rem 1.25rem 2rem 1.25rem; /* A caixinha quando está ativo*/
+    border-radius: 0.25rem; 
 }
 .nav-links a.active {
-    background-color: var(--highlight-color);
+    background-color: var(--hover-color);
+    color: #222;
 }
 .nav-links a:hover {
     background-color: var(--hover-light-color);
@@ -118,7 +122,7 @@ header {
 .contact-button a {
     background-color: var(--highlight-color);
     color: #fff;
-    padding: 0.625rem 0.9375rem; /* 10px 15px */
+    padding: 0.6rem 1rem;
     text-decoration: none;
     border-radius: 0.25rem; /* 4px */
 }
@@ -136,7 +140,7 @@ header {
     width: 1.5625rem; /* 25px */
     height: 0.1875rem; /* 3px */
     margin: 0.3125rem; /* 5px */
-    background-color: #333;
+    background-color: var(--hover-light-color);
 }
 
 /* Seção Home */
@@ -185,36 +189,37 @@ header {
 
 /* Seção Produtos */
 #produtos {
-    padding: 5rem 3.125rem; /* 80px 50px */
+    padding: 5rem 3.2rem; 
     text-align: center;
-    background-color: var(--background-offcolor);
+    background-color: #222;
 }
 #produtos h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.25rem; /* 36px */
-    margin-bottom: 3.125rem; /* 50px */
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 2.25rem; 
+    margin-bottom: 3.125rem;
+    color: var(--background-offcolor);
 }
 .produtos-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     position: relative; 
-    height: 25rem; /* 400px */
+    height: 25rem; 
 }
 .produto-card {
-    width: 18.75rem; /* 300px */
-    margin: 1.25rem; /* 20px */
+    width: 18.75rem; 
+    margin: 1.25rem; 
     perspective: 1000px;
     cursor: pointer;
-    position: relative; /* Necessário para o efeito flip */
+    position: relative; 
 }
 .produto-card .card-front, .produto-card .card-back {
     width: 100%;
-    height: 25rem; /* 400px */
+    height: 25rem; 
     position: absolute;
     backface-visibility: hidden;
     transition: transform 0.6s;
-    border-radius: 0.625rem; /* 10px */
+    border-radius: 0.7rem; 
     overflow: hidden;
 }
 .produto-card .card-front {
@@ -256,7 +261,7 @@ header {
     background: var(--background-color);
 }
 #orcamento h2 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
     font-size: 2.25rem; /* 36px */
     margin-bottom: 3.125rem; /* 50px */
 }
@@ -296,7 +301,7 @@ header {
     background: var(--background-offcolor);
 }
 #sobre h2 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
     font-size: 2.25rem; /* 36px */
     margin-bottom: 1.875rem; /* 30px */
 }
@@ -321,7 +326,7 @@ header {
     background-color: var(--background-color);
 }
 #parceiros h2 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
     font-size: 2.25rem; /* 36px */
     margin-bottom: 3.125rem; /* 50px */
 }
@@ -347,6 +352,9 @@ header {
 }
 
 /* Modal */
+.modal{
+    z-index: 10000;
+}
 .modal-content {
     border-radius: 0.625rem; /* 10px */
 }
@@ -390,10 +398,10 @@ header {
 #contato-form .btn {
     background: var(--hover-color);
     color:  var(--background-color);
-    padding: 0.9375rem 1.875rem; /* 15px 30px */
+    padding: 1rem 1.8rem;
     border: none;
     font-size: 1.125rem; /* 18px */
-    border-radius: 0.3125rem; /* 5px */
+    border-radius: 0.3rem; /* 5px */
     transition: background 0.3s;
 }
 #contato-form .btn:hover {
@@ -401,8 +409,8 @@ header {
 }
 .contato-info {
     flex: 1;
-    min-width: 18.75rem; /* 300px */
-    max-width: 31.25rem; /* 500px */
+    min-width: 18rem; /* 300px */
+    max-width: 31rem; /* 500px */
     margin: 1.25rem; /* 20px */
     text-align: left;
 }
@@ -429,7 +437,7 @@ header {
 
 /* Footer */
 footer {
-    background: var(--primary-color);
+    background: #222;
     color: var(--background-color);
     text-align: center;
     padding: 1.25rem 0; /* 20px 0 */
