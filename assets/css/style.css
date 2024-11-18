@@ -80,7 +80,7 @@ header {
     text-rendering: optimizelegibility;
     justify-content: space-between;
     align-items: center;
-    padding: 3rem 2rem;
+    padding: 1rem 0.5rem;
 }
 .logo a {
     font-family: 'Titillium Web', sans-serif;
@@ -132,14 +132,14 @@ header {
 
 /* Mobile Menu */
 .mobile-menu-icon {
-    display: none;
+    display: none; 
     cursor: pointer;
 }
 .mobile-menu-icon .bar {
     display: block;
-    width: 1.5625rem; /* 25px */
-    height: 0.1875rem; /* 3px */
-    margin: 0.3125rem; /* 5px */
+    width: 1.5625rem; 
+    height: 3px; 
+    margin: 5px; 
     background-color: var(--hover-light-color);
 }
 
@@ -254,58 +254,142 @@ header {
     color: var(--background-offcolor);
 }
 .produtos-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: relative; 
-    height: 25rem; 
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 0;
 }
 .produto-card {
-    width: 18.75rem; 
-    margin: 1.25rem; 
-    perspective: 1000px;
+    margin: 0 1rem;
+    min-height: 400px;
+    position: relative;
+    perspective: 1000px; 
     cursor: pointer;
-    position: relative; 
 }
-.produto-card .card-front, .produto-card .card-back {
+
+/* Container interno para o flip */
+.produto-card-inner {
+    position: relative;
     width: 100%;
-    height: 25rem; 
-    position: absolute;
-    backface-visibility: hidden;
-    transition: transform 0.6s;
-    border-radius: 0.7rem; 
-    overflow: hidden;
-}
-.produto-card .card-front {
-    background: var(--background-color);
-    border: 0.0625rem solid var(--background-offcolor); 
-    box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.1);
-}
-.produto-card .card-front img {
-    width: 100%;
-    height: auto;
-}
-.produto-card .card-front h3 {
-    font-size: 1.5rem; /* 24px */
-    margin: 1.25rem 0;
+    height: 100%;
     text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
 }
-.produto-card .card-back {
+
+/* Adiciona o efeito de flip no hover */
+.produto-card:hover .produto-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Estilo comum para frente e verso */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Esconde o verso quando virado */
     background: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Frente do card */
+.card-front {
+    z-index: 2;
+}
+
+.card-front img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.card-front h3 {
+    padding: 1rem;
+    margin: 0;
     color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+/* Verso do card */
+.card-back {
     transform: rotateY(180deg);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.25rem; /* 20px */
-    box-shadow: 0.0625rem 0.0625rem 0.1875rem 0.125rem var(--hover-color);
-    -webkit-box-shadow: 0.0625rem 0.0625rem 0.1875rem 0.125rem var(--hover-color);
+    padding: 1rem;
 }
-.produto-card:hover .card-front {
-    transform: rotateY(180deg);
+
+.card-back p {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.5;
 }
-.produto-card:hover .card-back {
-    transform: rotateY(360deg);
+
+/* Ajustes do Slick para produtos */
+.produtos-container .slick-slide {
+    margin: 0 10px;
+    height: auto;
+}
+
+.produtos-container .slick-track {
+    display: flex;
+    align-items: stretch;
+}
+
+.produtos-container .slick-slide > div {
+    height: 100%;
+}
+
+.produtos-container .slick-prev,
+.produtos-container .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.produtos-container .slick-prev {
+    left: -50px;
+}
+
+.produtos-container .slick-next {
+    right: -50px;
+}
+
+.produtos-container .slick-dots {
+    bottom: -40px;
+}
+
+.produtos-container .slick-dots li button:before {
+    font-size: 12px;
+    color: var(--primary-color);
+}
+
+@media (max-width: 48rem) {
+    .produtos-container {
+        padding: 1rem 0;
+    }
+
+    .produto-card {
+        margin: 0 0.5rem;
+        min-height: 350px;
+    }
+
+    .produtos-container .slick-dots {
+        bottom: -30px;
+    }
+
+    .card-front img {
+        height: 200px;
+    }
 }
 
 /* Seção Orçamento */
@@ -501,24 +585,56 @@ footer {
 
 /* Responsividade */
 @media (max-width: 48rem) { /* 768px */
+    /* Esconde completamente os links do navbar em mobile */
     .nav-links {
-        display: block;
-        flex-direction: column;
-        background: var(--background-color);
+        display: none;
+        opacity: 0; /* Garante que está completamente invisível */
+        visibility: hidden; /* Remove do fluxo de layout */
         position: absolute;
-        top: 4.375rem; /* 70px */
-        right: 0;
+        top: 100%;
+        left: 0;
         width: 100%;
+        background: var(--primary-color);
+        padding: 0;
+        margin: 0;
     }
-    .nav-links li {
-        margin: 1.25rem 0; /* 20px 0 */
+
+    /* Mostra o menu apenas quando ativo */
+    .nav-links.active {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        z-index: 1000;
     }
+
+    /* Mostra o ícone do menu mobile */
     .mobile-menu-icon {
         display: block;
+        margin-left: auto;
     }
+
+    /* Ajusta o layout do navbar para mobile */
     .navbar {
-        padding: 1rem; /* Adjusted padding */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
     }
+
+    /* Remove margens e paddings desnecessários */
+    .nav-links li {
+        margin: 0;
+        padding: 1rem;
+        text-align: center;
+        border-top: 1px solid var(--hover-light-color);
+    }
+
+    .nav-links a {
+        padding: 0.5rem 1rem;
+        width: 100%;
+        display: block;
+    }
+
     .carousel-content h1 {
         font-size: 2rem; /* 32px */
     }
@@ -559,14 +675,14 @@ footer {
 
 /* Fix mobile menu display */
 .nav-links {
-    display: flex; /* Changed from block to flex */
+    display: flex;
 }
 
 .nav-links.active {
-    display: block; /* Add this class for mobile menu */
-    background: var(--primary-color); /* Changed from white to match theme */
+    display: block;
+    background: var(--primary-color);
     position: absolute;
-    top: 100%; /* Changed from fixed pixel value */
+    top: 100%;
     right: 0;
     width: 100%;
     padding: 1rem 0;

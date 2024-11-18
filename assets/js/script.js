@@ -55,6 +55,37 @@ $(document).ready(function(){
             }
         ]
     });
+
+    // Produtos Carousel
+    $('.produtos-container').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        dots: true,
+        arrows: true,
+        prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+        nextArrow: '<button type="button" class="slick-next">Next</button>',
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px'
+                }
+            }
+        ]
+    });
 });
 
 // Inicialização do AOS (Animate on Scroll)
@@ -104,7 +135,14 @@ contatoForm.addEventListener('submit', function(e) {
 // Atualização dos links do navbar conforme o scroll
 const navLinks = document.querySelectorAll('.nav-links a');
 
+function isMobile() {
+    return window.innerWidth <= 768; // Define mobile breakpoint at 768px
+}
+
 function updateNavLinks() {
+    // Don't update nav links if on mobile
+    if (isMobile()) return;
+
     const fromTop = window.scrollY;
 
     navLinks.forEach(link => {
@@ -120,6 +158,17 @@ function updateNavLinks() {
         }
     });
 }
+
+// Add resize event listener to handle orientation changes
+window.addEventListener('resize', () => {
+    if (isMobile()) {
+        // Remove all active classes when switching to mobile
+        navLinks.forEach(link => link.classList.remove('active'));
+    } else {
+        // Update links when switching back to desktop
+        updateNavLinks();
+    }
+});
 
 window.addEventListener('scroll', updateNavLinks);
 updateNavLinks();
