@@ -54,11 +54,30 @@ AOS.init();
 const orcamentoForm = document.getElementById('orcamento-form');
 const formMensagem = document.getElementById('form-mensagem');
 
+// Add form validation
+function validateForm(form) {
+    const inputs = form.querySelectorAll('input, textarea');
+    let isValid = true;
+    
+    inputs.forEach(input => {
+        if (!input.value.trim()) {
+            isValid = false;
+            input.classList.add('invalid');
+        } else {
+            input.classList.remove('invalid');
+        }
+    });
+    
+    return isValid;
+}
+
+// Update form handlers
 orcamentoForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    // Simulação de envio do formulário
-    formMensagem.textContent = 'Obrigado! Seu orçamento foi enviado com sucesso.';
-    orcamentoForm.reset();
+    if (validateForm(this)) {
+        formMensagem.textContent = 'Obrigado! Seu orçamento foi enviado com sucesso.';
+        this.reset();
+    }
 });
 
 // Formulário de Contato
@@ -66,9 +85,10 @@ const contatoForm = document.getElementById('contato-form');
 
 contatoForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    // Simulação de envio do formulário
-    alert('Obrigado! Sua mensagem foi enviada com sucesso.');
-    contatoForm.reset();
+    if (validateForm(this)) {
+        alert('Obrigado! Sua mensagem foi enviada com sucesso.');
+        this.reset();
+    }
 });
 
 // Atualização dos links do navbar conforme o scroll

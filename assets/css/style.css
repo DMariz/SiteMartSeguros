@@ -45,7 +45,7 @@ body {
     right: 0;
     bottom: 0;
     background: var(--background-color);
-    z-index: 9999;
+    z-index: 1020;
 }
 .spinner {
     width: 2.5rem; /* 40px */
@@ -352,17 +352,19 @@ header {
 }
 
 /* Modal */
-.modal{
-    z-index: 10000;
-}
 .modal-content {
     border-radius: 0.625rem; /* 10px */
+     z-index: 1050;
 }
 .modal-header, .modal-footer {
     border: none;
 }
 .modal-title {
     font-family: 'Poppins', sans-serif;
+}
+/* Add this new rule for the modal backdrop */
+.modal-backdrop {
+    z-index: 1040; /* Should be between header and modal */
 }
 
 /* Seção Contato */
@@ -461,7 +463,7 @@ footer {
         display: block;
     }
     .navbar {
-        padding: 0.9375rem 1.25rem; /* 15px 20px */
+        padding: 1rem; /* Adjusted padding */
     }
     .carousel-content h1 {
         font-size: 2rem; /* 32px */
@@ -499,4 +501,28 @@ footer {
 /* Efeito Glow nos Ícones */
 .social-icons a:hover {
     text-shadow: 0 0 0.625rem var(--highlight-color); /* 10px */
+}
+
+/* Fix mobile menu display */
+.nav-links {
+    display: flex; /* Changed from block to flex */
+}
+
+.nav-links.active {
+    display: block; /* Add this class for mobile menu */
+    background: var(--primary-color); /* Changed from white to match theme */
+    position: absolute;
+    top: 100%; /* Changed from fixed pixel value */
+    right: 0;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.nav-links.active li {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.nav-links.active a {
+    color: var(--background-color);
 }
