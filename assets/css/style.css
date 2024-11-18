@@ -150,9 +150,63 @@ header {
     position: relative;
 }
 .slick-carousel {
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
+
+.slick-carousel .slick-prev,
+.slick-carousel .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.slick-carousel .slick-prev {
+    left: 20px;
+}
+
+.slick-carousel .slick-next {
+    right: 20px;
+}
+
+.slick-carousel .slick-dots {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.slick-carousel .slick-dots li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.slick-carousel .slick-dots li button {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    text-indent: -9999px;
+    cursor: pointer;
+}
+
+.slick-carousel .slick-dots li.slick-active button {
+    background: #fff;
+}
+
 .slick-carousel-item {
     width: 100%;
     height: 100vh;
