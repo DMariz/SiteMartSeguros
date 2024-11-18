@@ -107,7 +107,7 @@ header {
     color: var(--background-color);
     font-weight: 600;
     transition: color 0.3s;
-    padding: 2rem 1.25rem 2rem 1.25rem; /* A caixinha quando está ativo*/
+    padding: 2.3rem 1.25rem 2.3rem 1.25rem; /* A caixinha quando está ativo*/
     border-radius: 0.25rem; 
 }
 .nav-links a.active {
@@ -261,38 +261,34 @@ header {
 .produto-card {
     margin: 0 1rem;
     min-height: 400px;
-    position: relative;
-    perspective: 1000px; 
+    perspective: 1000px;
     cursor: pointer;
 }
 
-/* Container interno para o flip */
 .produto-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.8s;
+    transition: transform 0.6s;
     transform-style: preserve-3d;
 }
 
-/* Adiciona o efeito de flip no hover */
 .produto-card:hover .produto-card-inner {
     transform: rotateY(180deg);
 }
 
-/* Estilo comum para frente e verso */
 .card-front, .card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Esconde o verso quando virado */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     background: var(--background-color);
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Frente do card */
 .card-front {
     z-index: 2;
 }
@@ -311,13 +307,12 @@ header {
     font-size: 1.5rem;
 }
 
-/* Verso do card */
 .card-back {
     transform: rotateY(180deg);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 2rem;
 }
 
 .card-back p {
@@ -325,6 +320,17 @@ header {
     color: var(--text-color);
     font-size: 1rem;
     line-height: 1.5;
+}
+
+/* Ajustes para mobile */
+@media (max-width: 48rem) {
+    .produto-card {
+        min-height: 350px;
+    }
+
+    .card-front img {
+        height: 200px;
+    }
 }
 
 /* Ajustes do Slick para produtos */
@@ -371,25 +377,6 @@ header {
 .produtos-container .slick-dots li button:before {
     font-size: 12px;
     color: var(--primary-color);
-}
-
-@media (max-width: 48rem) {
-    .produtos-container {
-        padding: 1rem 0;
-    }
-
-    .produto-card {
-        margin: 0 0.5rem;
-        min-height: 350px;
-    }
-
-    .produtos-container .slick-dots {
-        bottom: -30px;
-    }
-
-    .card-front img {
-        height: 200px;
-    }
 }
 
 /* Seção Orçamento */
@@ -695,4 +682,9 @@ footer {
 
 .nav-links.active a {
     color: var(--background-color);
+}
+
+/* Adicione isso junto com os outros estilos do produto-card */
+.produto-card-inner.touched {
+    transform: rotateY(180deg);
 }
