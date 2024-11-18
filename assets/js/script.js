@@ -86,6 +86,24 @@ $(document).ready(function(){
             }
         ]
     });
+
+    // Tratamento de flip para touch devices
+    if ('ontouchstart' in window) {
+        let touchStartTime;
+        $('.produto-card').on('touchstart', function(e) {
+            touchStartTime = new Date().getTime();
+            e.preventDefault();
+        }).on('touchend', function(e) {
+            const touchEndTime = new Date().getTime();
+            const touchDuration = touchEndTime - touchStartTime;
+            
+            // Apenas flip se for um toque rápido (menos de 200ms)
+            if (touchDuration < 200) {
+                $(this).find('.produto-card-inner').toggleClass('touched');
+            }
+            e.preventDefault();
+        });
+    }
 });
 
 // Inicialização do AOS (Animate on Scroll)
