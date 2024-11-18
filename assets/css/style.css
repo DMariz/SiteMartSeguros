@@ -98,7 +98,7 @@ header {
     display: flex;
 }
 .nav-links li {
-    margin-left: 2rem; 
+    margin-left: 0;
     display: block;
 }
 
@@ -107,16 +107,17 @@ header {
     color: var(--background-color);
     font-weight: 600;
     transition: color 0.3s;
-    padding: 2.3rem 1.25rem 2.3rem 1.25rem; /* A caixinha quando está ativo*/
-    border-radius: 0.25rem; 
+    padding: 2.3rem 0.75rem;
+    
 }
 .nav-links a.active {
-    background-color: var(--hover-color);
+    background-color:  var(--hover-light-color);
     color: #222;
 }
 .nav-links a:hover {
-    background-color: var(--hover-light-color);
+    background-color:var(--hover-color);
     text-decoration: none;
+    color: #222;
 }
 
 .contact-button a {
