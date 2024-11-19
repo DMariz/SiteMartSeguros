@@ -146,15 +146,24 @@
 
     <!-- Seção Solicite Orçamento -->
     <section id="orcamento">
-        <h2 class= "section-title" data-aos="fade-up">Solicite Orçamento</h2>
+        <h2 class="section-title" data-aos="fade-up">Solicite um Orçamento</h2>
         <form id="orcamento-form" data-aos="fade-up" data-aos-delay="100">
-            <input type="text" name="nome" placeholder="Seu Nome" required>
-            <input type="email" name="email" placeholder="Seu E-mail" required>
-            <input type="tel" name="telefone" placeholder="Seu Telefone" required>
-            <textarea name="mensagem" placeholder="Mensagem" required></textarea>
-            <button type="submit" class="btn">Enviar</button>
+            <div class="form-group">
+                <input type="text" name="nome" placeholder="Seu Nome" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Seu E-mail" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" name="telefone" placeholder="Seu Telefone" 
+                       pattern="[0-9]{10,11}" title="Digite um telefone válido" required>
+            </div>
+            <div class="form-group">
+                <textarea name="mensagem" placeholder="Descreva o que você precisa" required></textarea>
+            </div>
+            <button type="submit" class="btn">Solicitar Orçamento</button>
+            <div id="form-mensagem"></div>
         </form>
-        <div id="form-mensagem" class="form-mensagem"></div>
     </section>
 
     <!-- Seção Quem Somos Nós -->
@@ -166,244 +175,252 @@
 
     </section>
 
-    <!-- Seção Parceiros e Seguradoras -->
-    <section id="parceiros" class="py-5">
+    <!-- Seção Parceiros -->
+    <section id="parceiros">
+        <h2 class="section-title" data-aos="fade-up">Parceiros e Seguradoras</h2>
         <div class="container">
-            <h2  class="mb-5c section-title" data-aos="fade-up" >Parceiros e Seguradoras</h2>
-            <div class="row" data-aos="fade-up" data-aos-delay="100">
-                <!-- Parceiro Allianz -->
+            <div class="row">
+                <!-- Card Allianz -->
                 <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="card border-0">
-                        <a href="#" data-toggle="modal" data-target="#modal-allianz">
-                            <img src="assets/images/logos/logo-allianz.png" class="card-img-top" alt="Logo da Allianz Seguros">
-                            
-                        </a>
+                    <div class="parceiro-card" data-aos="fade-up">
+                        <img src="assets/images/logos/logo-allianz.png" alt="Allianz Seguros" class="parceiro-logo">
+                        <button class="btn-ver-mais" data-toggle="modal" data-target="#modalAllianz">
+                            Ver Mais
+                        </button>
                     </div>
                 </div>
-                <!-- Modal do Parceiro 1 -->
-                <div class="modal fade" id="modal-allianz" tabindex="-1" role="dialog" aria-labelledby="modalAllianzLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <!-- Cabeçalho do Modal -->
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="modalAllianzLabel">Allianz Seguros</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                    <span aria-hidden="true" role="presentation">&times;</span>
-                                </button>
-                            </div>
-                            <!-- Corpo do Modal -->
-                            <div class="modal-body">
-                                <p class="text-center">
-                                    <img src="assets/images/logos/logo-allianz.png" alt="Allianz" class="img-fluid mb-3">
-                                </p>
-                                <p>Detalhes sobre a Allianz Seguros. Aqui você pode adicionar informações relevantes sobre a empresa.</p>
-                                <!-- Informações adicionais -->
-                                <h6>SAC:</h6>
-                                <p>0800 115 215</p>
-                                <h6>Site:</h6>
-                                <p><a href="http://www.allianz.com.br" target="_blank">www.allianz.com.br</a></p>
-                            </div>
-                            <!-- Rodapé do Modal -->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Parceiro HDI seguros -->
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="card border-0">
-                        <a href="#" data-toggle="modal" data-target="#modal-hdi">
-                            <img src="assets/images/logos/logo-hdi-seguros.png" class="card-img-top" alt="HDI Seguros">
-                        </a>
-                    </div>
-                </div>
-                <!-- Modal do Parceiro 2 -->
-                <div class="modal fade" id="modal-hdi" tabindex="-1" role="dialog" aria-labelledby="modalHDILabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <!-- Cabeçalho do Modal -->
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="modalHDILabel">HDI Seguros</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                    <span aria-hidden="true" role="presentation">&times;</span>
-                                </button>
-                            </div>
-                            <!-- Corpo do Modal -->
-                            <div class="modal-body">
-                                <p class="text-center">
-                                    <img src="assets/images/logos/logo-hdi-seguros.png" alt="HDI Seguros" class="img-fluid mb-3">
-                                </p>
-                                <p>Detalhes sobre a HDI Seguros. Adicione informações relevantes sobre a empresa.</p>
-                                <!-- Informações adicionais -->
-                                <h6>SAC:</h6>
-                                <p>0800 434 4340</p>
-                                <h6>Site:</h6>
-                                <p><a href="http://www.hdi.com.br" target="_blank">www.hdi.com.br</a></p>
-                            </div>
-                            <!-- Rodapé do Modal -->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Parceiro 3 -->
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="card border-0">
-                        <a href="#" data-toggle="modal" data-target="#modal-mapfre">
-                            <img src="assets/images/logos/logo-mapfre.png" class="card-img-top" alt="Mapfre">
-                        </a>
-                    </div>
-                </div>
-                <!-- Modal do Parceiro 3 -->
-                <div class="modal fade" id="modal-mapfre" tabindex="-1" role="dialog" aria-labelledby="modalMapfreLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <!-- Cabeçalho do Modal -->
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="modalMapfreLabel">Mapfre Seguros</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                    <span aria-hidden="true" role="presentation">&times;</span>
-                                </button>
-                            </div>
-                            <!-- Corpo do Modal -->
-                            <div class="modal-body">
-                                <p class="text-center">
-                                    <img src="assets/images/logos/logo-mapfre.png" alt="Mapfre" class="img-fluid mb-3">
-                                </p>
-                                <p>Detalhes sobre a Mapfre Seguros. Adicione informações relevantes sobre a empresa.</p>
-                                <!-- Informações adicionais -->
-                                <h6>SAC:</h6>
-                                <p>0800 775 4545</p>
-                                <h6>Site:</h6>
-                                <p><a href="http://www.mapfre.com.br" target="_blank">www.mapfre.com.br</a></p>
-                            </div>
-                            <!-- Rodapé do Modal -->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Parceiro 4 -->
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="card border-0">
-                        <a href="#" data-toggle="modal" data-target="#modal-sulamerica">
-                            <img src="assets/images/logos/logo-sulamerica.png" class="card-img-top" alt="SulAmérica">
-                        </a>
-                    </div>
-                </div>
-                <!-- Modal do Parceiro 4 -->
-                <div class="modal fade" id="modal-sulamerica" tabindex="-1" role="dialog" aria-labelledby="modalSulamericaLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <!-- Cabeçalho do Modal -->
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="modalSulamericaLabel">SulAmérica Seguros</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                    <span aria-hidden="true" role="presentation">&times;</span>
-                                </button>
-                            </div>
-                            <!-- Corpo do Modal -->
-                            <div class="modal-body">
-                                <p class="text-center">
-                                    <img src="assets/images/logos/logo-sulamerica.png" alt="SulAmérica" class="img-fluid mb-3">
-                                </p>
-                                <p>Detalhes sobre a SulAmérica Seguros. Adicione informações relevantes sobre a empresa.</p>
-                                <!-- Informações adicionais -->
-                                <h6>SAC:</h6>
-                                <p>0800 725 5901</p>
-                                <h6>Site:</h6>
-                                <p><a href="http://www.sulamerica.com.br" target="_blank">www.sulamerica.com.br</a></p>
-                            </div>
-                            <!-- Rodapé do Modal -->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Parceiro 5 -->
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="card border-0">
-                        <a href="#" data-toggle="modal" data-target="#modal-tokio-marine">
-                            <img src="assets/images/logos/logo-tokio-marine-seguradora.png" class="card-img-top" alt="Tokio Marine">
-                        </a>
-                    </div>
-                </div>
-                <!-- Modal do Parceiro 5 -->
-                <div class="modal fade" id="modal-tokio-marine" tabindex="-1" role="dialog" aria-labelledby="modalTokioMarineLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <!-- Cabeçalho do Modal -->
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="modalTokioMarineLabel">Tokio Marine Seguradora</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                    <span aria-hidden="true" role="presentation">&times;</span>
-                                </button>
-                            </div>
-                            <!-- Corpo do Modal -->
-                            <div class="modal-body">
-                                <p class="text-center">
-                                    <img src="assets/images/logos/logo-tokio-marine-seguradora.png" alt="Tokio Marine" class="img-fluid mb-3">
-                                </p>
-                                <p>Detalhes sobre a Tokio Marine Seguradora. Adicione informações relevantes sobre a empresa.</p>
-                                <!-- Informações adicionais -->
-                                <h6>SAC:</h6>
-                                <p>0800 703 9000</p>
-                                <h6>Site:</h6>
-                                <p><a href="http://www.tokiomarine.com.br" target="_blank">www.tokiomarine.com.br</a></p>
-                            </div>
-                            <!-- Rodapé do Modal -->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Parceiro 6 -->
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="card border-0">
-                        <a href="#" data-toggle="modal" data-target="#modal-portoseguro">
-                            <img src="assets/images/logos/logo-portoseguro.png" class="card-img-top" alt="Porto Seguro">
-                        </a>
-                    </div>
-                </div>
-                <!-- Modal do Parceiro 6 -->
-                <div class="modal fade" id="modal-portoseguro" tabindex="-1" role="dialog" aria-labelledby="modalPortoSeguroLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <!-- Cabeçalho do Modal -->
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="modalPortoSeguroLabel">Porto Seguro</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                    <span aria-hidden="true" role="presentation">&times;</span>
-                                </button>
-                            </div>
-                            <!-- Corpo do Modal -->
-                            <div class="modal-body">
-                                <p class="text-center">
-                                    <img src="assets/images/logos/logo-portoseguro.png" alt="Porto Seguro" class="img-fluid mb-3">
-                                </p>
-                                <p>Detalhes sobre a Porto Seguro. Adicione informações relevantes sobre a empresa.</p>
-                                <!-- Informações adicionais -->
-                                <h6>SAC:</h6>
-                                <p>0800 727 2766</p>
-                                <h6>Site:</h6>
-                                <p><a href="http://www.portoseguro.com.br" target="_blank">www.portoseguro.com.br</a></p>
-                            </div>
-                            <!-- Rodapé do Modal -->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- Fim da row -->
-        </div> <!-- Fim da container -->
-    </section>
 
+                <!-- Card HDI -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="parceiro-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="assets/images/logos/logo-hdi-seguros.png" alt="HDI Seguros" class="parceiro-logo">
+                        <button class="btn-ver-mais" data-toggle="modal" data-target="#modalHDI">
+                            Ver Mais
+                        </button>
+                    </div>
+                </div>
+                <!-- Card mapfre -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="parceiro-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="assets/images/logos/logo-mapfre.png" alt="Mapfre Seguros" class="parceiro-logo">
+                        <button class="btn-ver-mais" data-toggle="modal" data-target="#modalMapfre">
+                            Ver Mais
+                        </button>
+                    </div>
+                </div>
+                <!-- Porto Seguro -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="parceiro-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="assets/images/logos/logo-portoseguro.png" alt="Porto Seguro" class="parceiro-logo">
+                        <button class="btn-ver-mais" data-toggle="modal" data-target="#modalPorto">
+                            Ver Mais
+                        </button>
+                    </div>
+                </div>
+                <!-- SulAmérica -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="parceiro-card" data-aos="fade-up">
+                        <img src="assets/images/logos/logo-sulamerica.png" alt="SulAmérica Seguros" class="parceiro-logo">
+                        <button class="btn-ver-mais" data-toggle="modal" data-target="#modalSulamerica">
+                            Ver Mais
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tokio Marine -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="parceiro-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="assets/images/logos/logo-tokio-marine.png" alt="Tokio Marine Seguradora" class="parceiro-logo">
+                        <button class="btn-ver-mais" data-toggle="modal" data-target="#modalTokio">
+                            Ver Mais
+                        </button>
+                    </div>
+                </div>
+        </div>
+    </section>
+    
+    <!-- Modais das Seguradoras (adicionar após os modais existentes) -->
+    <!-- Modal Allianz -->
+    <div class="modal fade custom-modal" id="modalAllianz" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Allianz Seguros</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="seguradora-info">
+                        <img src="assets/images/logos/logo-allianz.png" alt="Allianz" class="modal-logo">
+                        <div class="info-content">
+                            <h6>Sobre a Seguradora</h6>
+                            <p>Texto sobre a Allianz...</p>
+                            
+                            <div class="contato-info">
+                                <h6>Canais de Atendimento</h6>
+                                <p><strong>SAC:</strong> 0800 115 215</p>
+                                <p><strong>Site:</strong> <a href="http://www.allianz.com.br" target="_blank">www.allianz.com.br</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal HDI -->
+    <div class="modal fade custom-modal" id="modalHDI" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">HDI Seguros</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="seguradora-info">
+                        <img src="assets/images/logos/logo-hdi-seguros.png" alt="HDI" class="modal-logo">
+                        <div class="info-content">
+                            <h6>Sobre a Seguradora</h6>
+                            <p>Texto sobre a HDI...</p>
+                            
+                            <div class="contato-info">
+                                <h6>Canais de Atendimento</h6>
+                                <p><strong>SAC:</strong> 0800 115 215</p>
+                                <p><strong>Atendimento 24h Whatsapp</strong>: <a href="https://api.whatsapp.com/send?phone=5508007701608"><i class="fab fa-whatsapp"></i> +55 800 770 1608</a></p>
+                                <p><strong>Site:</strong> <a href="https://www.hdiseguros.com.br/" target="_blank">www.hdiseguros.com.br</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Mapfre -->
+    <div class="modal fade custom-modal" id="modalMapfre" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mapfre Seguros</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="seguradora-info">
+                        <img src="assets/images/logos/logo-mapfre.png" alt="Mapfre" class="modal-logo">
+                        <div class="info-content">
+                            <h6>Sobre a Seguradora</h6>
+                            <p>Texto sobre a Mapfre...</p>
+                            
+                            <div class="contato-info">
+                                <h6>Canais de Atendimento</h6>
+                                <p><strong>SAC:</strong> 0800 727 2766</p>
+                                <p><strong>Sinistro Auto:</strong> 0800 727 2766</p>
+                                <p>Atendimento 24h: <a href="https://api.whatsapp.com/send?phone=551133665500"><i class="fab fa-whatsapp"></i> (11) 3366-5500</a></p>
+                                <p><strong>Site:</strong> <a href="https://www.mapfre.com.br" target="_blank">www.mapfre.com.br</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+
+    <!-- Modal Porto Seguro -->
+    <div class="modal fade custom-modal" id="modalPorto" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Porto Seguro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="seguradora-info">
+                        <img src="assets/images/logos/logo-portoseguro.png" alt="Porto Seguro" class="modal-logo">
+                        <div class="info-content">
+                            <h6>Sobre a Seguradora</h6>
+                            <p>A Porto Seguro é uma das maiores seguradoras do Brasil, conhecida por sua excelência em atendimento e ampla gama de produtos e serviços.</p>
+                            
+                            <div class="contato-info">
+                                <h6>Canais de Atendimento</h6>
+                                <p><strong>SAC:</strong> 0800 727 2766</p>
+                                <p><strong>Sinistro Auto:</strong> 0800 727 2766</p>
+                                <p>Atendimento 24h: <a href="https://api.whatsapp.com/send?phone=551133665500"><i class="fab fa-whatsapp"></i> (11) 3366-5500</a></p>
+                                <p><strong>Site:</strong> <a href="https://www.portoseguro.com.br" target="_blank">www.portoseguro.com.br</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal SulAmérica -->
+    <div class="modal fade custom-modal" id="modalSulamerica" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">SulAmérica Seguros</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="seguradora-info">
+                        <img src="assets/images/logos/logo-sulamerica.png" alt="SulAmérica" class="modal-logo">
+                        <div class="info-content">
+                            <h6>Sobre a Seguradora</h6>
+                            <p>A SulAmérica é referência em seguros de saúde e automóveis no Brasil, oferecendo soluções completas em seguros há mais de 120 anos.</p>
+                            
+                            <div class="contato-info">
+                                <h6>Canais de Atendimento</h6>
+                                <p><strong>SAC:</strong> 0800 722 0504</p>
+                                <p><strong>Sinistro Auto:</strong> 0800 726 1900</p>
+                                <p>Atendimento 24h: <a href="https://api.whatsapp.com/send?phone=5508000244004"><i class="fab fa-whatsapp"></i> 0800 024 4004</a></p>
+                                <p><strong>Site:</strong> <a href="https://www.sulamerica.com.br" target="_blank">www.sulamerica.com.br</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Tokio Marine -->
+    <div class="modal fade custom-modal" id="modalTokio" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tokio Marine Seguros</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="seguradora-info">
+                        <img src="assets/images/logos/logo-tokio-marine.png" alt="Tokio Marine" class="modal-logo">
+                        <div class="info-content">
+                            <h6>Sobre a Seguradora</h6>
+                            <p>A Tokio Marine é uma das maiores seguradoras do mundo, com mais de 140 anos de experiência global e forte presença no mercado brasileiro.</p>
+                            
+                            <div class="contato-info">
+                                <h6>Canais de Atendimento</h6>
+                                <p><strong>SAC:</strong> 0800 703 9000</p>
+                                <p><strong>Sinistro Auto:</strong> 0800 703 9000</p>
+                                <p>Atendimento 24h: <a href="https://api.whatsapp.com/send?phone=550800707869"><i class="fab fa-whatsapp"></i> 0800 707 869</a></p>
+                                <p><strong>Site:</strong> <a href="https://www.tokiomarine.com.br" target="_blank">www.tokiomarine.com.br</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Seção Contato -->
     <section id="contato">
     <h2 class= "section-title" data-aos="fade-up" >Contato</h2>
@@ -500,11 +517,19 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Slick Carousel JS -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- EmailJS -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <!-- AOS JS (Animate on Scroll) -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- LazySizes JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
     <!-- Seu JavaScript personalizado -->
     <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Inicializa o EmailJS com sua chave pública
+        emailjs.init("YOUR_PUBLIC_KEY");
+    </script>
+    
 </body>
 </html>

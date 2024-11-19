@@ -106,6 +106,7 @@ $(document).ready(function(){
     }
 });
 
+
 // Inicialização do AOS (Animate on Scroll)
 AOS.init();
 
@@ -133,9 +134,35 @@ function validateForm(form) {
 // Update form handlers
 orcamentoForm.addEventListener('submit', function(e) {
     e.preventDefault();
+    
     if (validateForm(this)) {
-        formMensagem.textContent = 'Obrigado! Seu orçamento foi enviado com sucesso.';
-        this.reset();
+        // Pegar os dados do formulário
+        const formData = new FormData(this);
+        const data = {
+            nome: formData.get('nome'),
+            email: formData.get('email'),
+            telefone: formData.get('telefone'),
+            mensagem: formData.get('mensagem')
+        };
+
+        // Configurar o serviço de email (usando EmailJS)
+        emailjs.send('service_seu_id', 'template_seu_id', {
+            to_email: 'seu-email@exemplo.com',
+            from_name: data.nome,
+            from_email: data.email,
+            phone: data.telefone,
+            message: data.mensagem
+        })
+        .then(function() {
+            formMensagem.textContent = 'Orçamento enviado com sucesso! Entraremos em contato em breve.';
+            formMensagem.style.color = 'green';
+            orcamentoForm.reset();
+        })
+        .catch(function(error) {
+            formMensagem.textContent = 'Erro ao enviar. Por favor, tente novamente.';
+            formMensagem.style.color = 'red';
+            console.error('Erro:', error);
+        });
     }
 });
 
@@ -190,3 +217,23 @@ window.addEventListener('resize', () => {
 
 window.addEventListener('scroll', updateNavLinks);
 updateNavLinks();
+
+// Inicialização dos modais
+$('.custom-modal').on('show.bs.modal', function () {
+    // Reset scroll position
+    $(this).find('.modal-body').scrollTop(0);
+});
+
+// Fechar modal com ESC
+$(document).keydown(function(e) {
+    if (e.keyCode === 27) {
+        $('.custom-modal').modal('hide');
+    }
+});
+
+// Prevenir propagação de cliques dentro do modal
+$('.custom-modal').on('click', function(e) {
+    if ($(e.target).hasClass('custom-modal')) {
+        $(this).modal('hide');
+    }
+});

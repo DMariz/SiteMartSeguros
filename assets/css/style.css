@@ -762,3 +762,130 @@ footer .col-sm-2 li {
 .produto-card-inner.touched {
     transform: rotateY(180deg);
 }
+
+/* Estilos para os cards de parceiros */
+.parceiro-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.parceiro-card:hover {
+    transform: translateY(-5px);
+}
+
+.parceiro-logo {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 1.5rem;
+}
+
+.btn-ver-mais {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-ver-mais:hover {
+    background: var(--hover-color);
+}
+
+/* Estilos para o modal customizado */
+.custom-modal .modal-content {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.custom-modal .modal-header {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 1.5rem;
+}
+
+.custom-modal .modal-title {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.custom-modal .close {
+    color: #fff;
+    opacity: 1;
+    text-shadow: none;
+    transition: transform 0.3s ease;
+}
+
+.custom-modal .close:hover {
+    transform: rotate(90deg);
+}
+
+.custom-modal .modal-body {
+    padding: 2rem;
+}
+
+.seguradora-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.modal-logo {
+    max-width: 200px;
+    height: auto;
+}
+
+.info-content {
+    text-align: left;
+    width: 100%;
+}
+
+.info-content h6 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.contato-info {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.contato-info p {
+    margin-bottom: 0.5rem;
+}
+
+.contato-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.contato-info a:hover {
+    color: var(--hover-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .seguradora-info {
+        flex-direction: column;
+    }
+    
+    .modal-logo {
+        max-width: 150px;
+    }
+    
+    .custom-modal .modal-dialog {
+        margin: 1rem;
+    }
+}
