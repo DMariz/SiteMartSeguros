@@ -258,12 +258,15 @@ header {
     width: 100%;
     margin: 0 auto;
     padding: 2rem 0;
+    overflow: visible;
 }
 .produto-card {
     margin: 0 1rem;
     min-height: 400px;
     perspective: 1000px;
     cursor: pointer;
+    overflow: visible;
+    padding: 50px;
 }
 
 .produto-card-inner {
@@ -273,6 +276,7 @@ header {
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
+    overflow: visible;
 }
 
 .produto-card:hover .produto-card-inner {
@@ -288,6 +292,8 @@ header {
     background: var(--background-color);
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+    
 }
 
 .card-front {
@@ -313,6 +319,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
     padding: 2rem;
 }
 
@@ -514,7 +521,7 @@ header {
 }
 /* Modal */
 .modal-content {
-    border-radius: 0.625rem; /* 10px */
+    border-radius: 0.625rem; 
      z-index: 1050;
 }
 .modal-header, .modal-footer {
@@ -605,15 +612,15 @@ header {
 
 /* Seção Contato */
 #contato {
-    padding: 5rem 3.125rem; /* 80px 50px */
+    padding: 5rem 3.125rem; 
     text-align: center;
     background: var(--background-offcolor);
 }
 
 #contato h2 {
     font-family: 'Poppins', sans-serif;
-    font-size: 2.25rem; /* 36px */
-    margin-bottom: 3.125rem; /* 50px */
+    font-size: 2.25rem; 
+    margin-bottom: 3.125rem; 
 }
 .contato-container {
     display: flex;
@@ -622,24 +629,24 @@ header {
 }
 #contato-form {
     flex: 1;
-    min-width: 18.75rem; /* 300px */
-    max-width: 31.25rem; /* 500px */
-    margin: 1.25rem; /* 20px */
+    min-width: 18.75rem; 
+    max-width: 31.25rem; 
+    margin: 1.25rem; 
 }
 #contato-form input, #contato-form textarea {
     width: 100%;
-    padding: 0.9375rem; /* 15px */
-    margin-bottom: 1.25rem; /* 20px */
+    padding: 0.9375rem;
+    margin-bottom: 1.25rem; 
     border: 0.0625rem solid var(--background-offcolor);
-    border-radius: 0.3125rem; /* 5px */
+    border-radius: 0.3125rem; 
 }
 #contato-form .btn {
     background: var(--hover-color);
     color:  var(--background-color);
     padding: 1rem 1.8rem;
     border: none;
-    font-size: 1.125rem; /* 18px */
-    border-radius: 0.3rem; /* 5px */
+    font-size: 1.125rem; 
+    border-radius: 0.3rem; 
     transition: background 0.3s;
 }
 #contato-form .btn:hover {
@@ -647,26 +654,26 @@ header {
 }
 .contato-info {
     flex: 1;
-    min-width: 18rem; /* 300px */
-    max-width: 31rem; /* 500px */
-    margin: 1.25rem; /* 20px */
+    min-width: 18rem; 
+    max-width: 31rem; 
+    margin: 1.25rem; 
     text-align: left;
 }
 .contato-info h3 {
-    font-size: 1.5rem; /* 24px */
-    margin-bottom: 0.625rem; /* 10px */
+    font-size: 1.5rem; 
+    margin-bottom: 0.625rem; 
 }
 .contato-info p {
-    font-size: 1.125rem; /* 18px */
-    margin-bottom: 1.25rem; /* 20px */
+    font-size: 1.125rem; 
+    margin-bottom: 1.25rem; 
 }
 .social-icons {
     display: flex;
 }
 .social-icons a {
     color: #333;
-    font-size: 1.5rem; /* 24px */
-    margin-right: 0.9375rem; /* 15px */
+    font-size: 1.5rem; 
+    margin-right: 0.9375rem; 
     transition: color 0.3s;
 }
 .social-icons a:hover {
@@ -748,9 +755,9 @@ footer .col-sm-2 li {
     }
 }
 
-/* Responsividade */
+/* Mobile */
 @media (max-width: 48rem) { /* 768px */
-    /* Esconde completamente os links do navbar em mobile */
+    
     .nav-links {
         display: none;
         opacity: 0; /* Garante que está completamente invisível */
@@ -801,11 +808,11 @@ footer .col-sm-2 li {
     }
 
     .carousel-content h1 {
-        font-size: 2rem; /* 32px */
+        font-size: 2rem; 
     }
     .carousel-content .btn {
-        padding: 0.625rem 1.25rem; /* 10px 20px */
-        font-size: 1rem; /* 16px */
+        padding: 0.625rem 1.25rem; 
+        font-size: 1rem; 
     }
     .produtos-container {
         flex-direction: column;
@@ -814,16 +821,16 @@ footer .col-sm-2 li {
     }
     .produto-card {
         width: 100%;
-        margin-bottom: 1.25rem; /* 20px */
+        margin-bottom: 1.25rem; 
     }
     #orcamento {
-        padding: 3.75rem 1.25rem; /* 60px 20px */
+        padding: 3.75rem 1.25rem;
     }
     .contato-container {
         flex-direction: column;
     }
     #parceiros .col-md-4 {
-        margin-bottom: 1.875rem; /* 30px */
+        margin-bottom: 1.875rem; 
     }
 }
 
