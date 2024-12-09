@@ -80,16 +80,29 @@ header {
     text-rendering: optimizelegibility;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0.5rem;
+    padding: 0rem 0.5rem;
+    max-height: 90px;
+    box-sizing: border-box;
 }
-.logo a {
+.main-logo a {
     font-family: 'Titillium Web', sans-serif;
+    align-items: center;
     font-size: 2rem;
     color: #fff;
     text-decoration: none;
     font-weight: 1000;
+    height: 100%;
+    
 }
-.logo a:hover {
+.logo-img {
+    max-height: 100px;
+    width: auto;
+    overflow: auto;
+   
+    margin: 0;
+    padding: 0;
+}
+.main-logo a:hover {
     color: var(--background-color);
     text-decoration: none;
 }
