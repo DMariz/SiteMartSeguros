@@ -110,6 +110,9 @@ $(document).ready(function(){
 // Inicialização do AOS (Animate on Scroll)
 AOS.init();
 
+// Inicialização do EmailJS com sua chave pública
+emailjs.init("YOUR_PUBLIC_KEY"); // Substitua por sua chave pública
+
 // Formulário de Orçamento
 const orcamentoForm = document.getElementById('orcamento-form');
 const formMensagem = document.getElementById('form-mensagem');
@@ -146,8 +149,8 @@ orcamentoForm.addEventListener('submit', function(e) {
         };
 
         // Configurar o serviço de email (usando EmailJS)
-        emailjs.send('service_seu_id', 'template_seu_id', {
-            to_email: 'seu-email@exemplo.com',
+        emailjs.send('service_seu_id', 'template_seu_id', { // Substitua pelos IDs corretos
+            to_email: 'seu-email@exemplo.com', // O email que receberá a mensagem
             from_name: data.nome,
             from_email: data.email,
             phone: data.telefone,
@@ -166,7 +169,7 @@ orcamentoForm.addEventListener('submit', function(e) {
     }
 });
 
-// Formulário de Contato
+// Formul��rio de Contato
 const contatoForm = document.getElementById('contato-form');
 
 contatoForm.addEventListener('submit', function(e) {
