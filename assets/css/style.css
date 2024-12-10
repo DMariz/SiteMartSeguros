@@ -80,18 +80,19 @@ header {
     text-rendering: optimizelegibility;
     justify-content: space-between;
     align-items: center;
-    padding: 0rem 0.5rem;
-    max-height: 90px;
+    padding: 0rem 0rem;
+    max-height: 100px;
     box-sizing: border-box;
 }
 .main-logo a {
-    font-family: 'Titillium Web', sans-serif;
-    align-items: center;
-    font-size: 2rem;
-    color: #fff;
-    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
     font-weight: 1000;
+    font-size: 2rem;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;    
     height: 100%;
+    margin-top: 0px;
     
 }
 .logo-img {
@@ -120,7 +121,7 @@ header {
     color: var(--background-color);
     font-weight: 600;
     transition: color 0.3s;
-    padding: 2.3rem 0.75rem;
+    padding: 2.8rem 0.6rem;
     
 }
 .nav-links a.active {
@@ -444,7 +445,8 @@ header {
 #sobre {
     padding: 5rem 3.125rem; /* 80px 50px */
     text-align: center;
-    background: var(--background-offcolor);
+    background: var(--primary-color);
+    color: #eee;
 }
 #sobre h2 {
     font-family: 'Titillium Web', sans-serif;
@@ -457,7 +459,7 @@ header {
 }
 #sobre h3 {
     font-size: 1.5rem; /* 24px */
-    color: var(--primary-color);
+    color: var(--hover-light-color);
     transition: transform 0.3s;
     margin-bottom: 1.875rem; /* 30px */
 }
@@ -799,6 +801,10 @@ footer .col-sm-2 li {
         opacity: 1;
         visibility: visible;
         z-index: 1000;
+    }
+
+    .logo-img{
+        height: 80px;
     }
 
     /* Mostra o ícone do menu mobile */
