@@ -110,14 +110,14 @@ $(document).ready(function(){
 // Inicialização do AOS (Animate on Scroll)
 AOS.init();
 
+
 // Inicialização do EmailJS com sua chave pública
-emailjs.init("YOUR_PUBLIC_KEY"); // Substitua por sua chave pública
+emailjs.init("GgrFQD9UOLYdYJWum"); 
 
-// Formulário de Orçamento
-const orcamentoForm = document.getElementById('orcamento-form');
-const formMensagem = document.getElementById('form-mensagem');
+// Selecionar ambos os formulários pelo ID
+const forms = document.querySelectorAll('#orcamento-form, #contato-form');
 
-// Add form validation
+// Função de validação do formulário
 function validateForm(form) {
     const inputs = form.querySelectorAll('input, textarea');
     let isValid = true;
@@ -134,13 +134,14 @@ function validateForm(form) {
     return isValid;
 }
 
-// Update form handlers
-orcamentoForm.addEventListener('submit', function(e) {
+// Função genérica para lidar com o envio do formulário
+function handleFormSubmit(e) {
     e.preventDefault();
+    const form = e.target;
     
-    if (validateForm(this)) {
-        // Pegar os dados do formulário
-        const formData = new FormData(this);
+    if (validateForm(form)) {
+        // Coletar os dados do formulário
+        const formData = new FormData(form);
         const data = {
             nome: formData.get('nome'),
             email: formData.get('email'),
@@ -148,37 +149,48 @@ orcamentoForm.addEventListener('submit', function(e) {
             mensagem: formData.get('mensagem')
         };
 
-        // Configurar o serviço de email (usando EmailJS)
-        emailjs.send('service_seu_id', 'template_seu_id', { // Substitua pelos IDs corretos
-            to_email: 'seu-email@exemplo.com', // O email que receberá a mensagem
+                // Enviar o e-mail usando EmailJS
+        emailjs.send('service_66x94oe', 'template_lkmi05m', { 
             from_name: data.nome,
             from_email: data.email,
             phone: data.telefone,
             message: data.mensagem
         })
         .then(function() {
-            formMensagem.textContent = 'Orçamento enviado com sucesso! Entraremos em contato em breve.';
-            formMensagem.style.color = 'green';
-            orcamentoForm.reset();
+            // Selecionar o elemento de mensagem dentro do formulário
+            const messageElement = form.querySelector('.form-mensagem');
+            if(messageElement){
+                // Personalizar a mensagem de sucesso com base no formulário
+                if(form.id === 'orcamento-form'){
+                    messageElement.textContent = 'Mensagem enviada com sucesso! Entraremos em contato em breve!';
+                } else {
+                    messageElement.textContent = 'Mensagem enviada com sucesso! Obrigado por entrar em contato.';
+                }
+                messageElement.style.color = 'green';
+            } else {
+                alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+            }
+            form.reset();
         })
         .catch(function(error) {
-            formMensagem.textContent = 'Erro ao enviar. Por favor, tente novamente.';
-            formMensagem.style.color = 'red';
+            const messageElement = form.querySelector('.form-mensagem');
+            if(messageElement){
+                messageElement.textContent = 'Erro ao enviar. Por favor, tente novamente.';
+                messageElement.style.color = 'red';
+            } else {
+                alert('Erro ao enviar. Por favor, tente novamente.');
+            }
             console.error('Erro:', error);
         });
+
     }
+}
+
+// Adicionar o event listener de submit para cada formulário
+forms.forEach(form => {
+    form.addEventListener('submit', handleFormSubmit);
 });
 
-// Formul��rio de Contato
-const contatoForm = document.getElementById('contato-form');
-
-contatoForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    if (validateForm(this)) {
-        alert('Obrigado! Sua mensagem foi enviada com sucesso.');
-        this.reset();
-    }
-});
 
 // Atualização dos links do navbar conforme o scroll
 const navLinks = document.querySelectorAll('.nav-links a');

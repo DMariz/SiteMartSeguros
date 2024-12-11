@@ -667,6 +667,9 @@ header {
 #contato-form .btn:hover {
     background: var(--primary-color);
 }
+.invalid {
+    border: 2px solid red;
+}
 .contato-info {
     flex: 1;
     min-width: 18rem; 
